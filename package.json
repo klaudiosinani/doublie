@@ -1,0 +1,28 @@
+{
+  "name": "doubly",
+  "version": "0.0.0",
+  "description": "⚡ Doubly & singly linked lists for ES6",
+  "license": "MIT",
+  "repository": "klauscfhq/doubly",
+  "author": {
+    "name": "Klaus Sinani",
+    "email": "klauscfhq@protonmail.com",
+    "url": "https://klauscfhq.github.io"
+  },
+  "keywords": [
+    "doubly",
+    "singly",
+    "linked",
+    "list",
+    "es6"
+  ],
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "xo": "*"
+  },
+  "xo": {
+    "space": 2
+  }
+}
