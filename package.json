@@ -13,8 +13,7 @@
     "doubly",
     "singly",
     "linked",
-    "list",
-    "es6"
+    "list"
   ],
   "scripts": {
     "test": "xo"
