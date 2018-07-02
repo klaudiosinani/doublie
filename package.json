@@ -9,6 +9,12 @@
     "email": "klauscfhq@protonmail.com",
     "url": "https://klauscfhq.github.io"
   },
+  "files": [
+    "index.js",
+    "circular.js",
+    "linear.js",
+    "node.js"
+  ],
   "keywords": [
     "doubly",
     "singly",
