@@ -1,7 +1,7 @@
 {
   "name": "doubly",
   "version": "0.0.0",
-  "description": "⚡ Doubly & singly linked lists for ES6",
+  "description": "⚡ Doubly circular & linear linked lists for ES6",
   "license": "MIT",
   "repository": "klauscfhq/doubly",
   "author": {
