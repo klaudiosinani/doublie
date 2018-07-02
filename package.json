@@ -17,9 +17,12 @@
   ],
   "keywords": [
     "doubly",
-    "singly",
+    "linear",
+    "circular",
     "linked",
-    "list"
+    "list",
+    "data",
+    "structure"
   ],
   "scripts": {
     "test": "xo"
