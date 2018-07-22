@@ -28,6 +28,7 @@ Progressive and minimal implementation of the circular and linear doubly linked 
 - [In Depth](#in-depth)
 - [API](#api)
 - [Development](#development)
+- [Related](#related)
 - [Team](#team)
 - [License](#license)
 
@@ -61,6 +62,10 @@ For more info on how to contribute to the project, please read the [contributing
 - Navigate to your local fork: `cd doubly`
 - Install the project dependencies: `npm install` or `yarn install`
 - Lint the code and run the tests: `npm test` or `yarn test`
+
+## Related
+
+- [singlie](https://github.com/klauscfhq/singlie) - Singly circular & linear linked lists for ES6
 
 ## Team
 
