@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "description": "⚡ Doubly circular & linear linked lists for ES6",
   "license": "MIT",
-  "repository": "klauscfhq/doubly",
+  "repository": "klaussinani/doubly",
   "author": {
     "name": "Klaus Sinani",
-    "email": "klauscfhq@protonmail.com",
-    "url": "https://klauscfhq.github.io"
+    "email": "klaussinani@gmail.com",
+    "url": "https://klaussinani.github.io"
   },
   "files": [
     "index.js",
