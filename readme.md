@@ -8,11 +8,11 @@
 </h4>
 
 <p align="center">
-  <a href="https://travis-ci.com/klauscfhq/doubly">
-    <img alt="Build Status" src="https://travis-ci.com/klauscfhq/doubly.svg?branch=master">
+  <a href="https://travis-ci.com/klaussinani/doubly">
+    <img alt="Build Status" src="https://travis-ci.com/klaussinani/doubly.svg?branch=master">
   </a>
-  <a href='https://coveralls.io/github/klauscfhq/doubly?branch=master'>
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klauscfhq/doubly/badge.svg?branch=master">
+  <a href='https://coveralls.io/github/klaussinani/doubly?branch=master'>
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klaussinani/doubly/badge.svg?branch=master">
   </a>
 </p>
 
@@ -42,7 +42,7 @@ npm install doubly
 
 Doubly exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
-Usage examples can be also found at the [`test`](https://github.com/klauscfhq/doubly/tree/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klaussinani/doubly/tree/master/test) directory.
 
 ## In Depth
 
@@ -56,7 +56,7 @@ The following documentation holds for both circular & linear lists. The describe
 
 ## Development
 
-For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klauscfhq/doubly/blob/master/contributing.md).
+For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/doubly/blob/master/contributing.md).
 
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd doubly`
@@ -65,12 +65,12 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## Related
 
-- [singlie](https://github.com/klauscfhq/singlie) - Singly circular & linear linked lists for ES6
+- [singlie](https://github.com/klaussinani/singlie) - Singly circular & linear linked lists for ES6
 
 ## Team
 
-- Klaus Sinani [(@klauscfhq)](https://github.com/klauscfhq)
+- Klaus Sinani [(@klaussinani)](https://github.com/klaussinani)
 
 ## License
 
-[MIT](https://github.com/klauscfhq/doubly/blob/master/license.md)
+[MIT](https://github.com/klaussinani/doubly/blob/master/license.md)
