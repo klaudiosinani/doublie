@@ -1,9 +1,9 @@
 {
-  "name": "doubly",
+  "name": "doublie",
   "version": "0.0.0",
   "description": "⚡ Doubly circular & linear linked lists for ES6",
   "license": "MIT",
-  "repository": "klaussinani/doubly",
+  "repository": "klaussinani/doublie",
   "author": {
     "name": "Klaus Sinani",
     "email": "klaussinani@gmail.com",
@@ -16,6 +16,7 @@
     "node.js"
   ],
   "keywords": [
+    "doublie",
     "doubly",
     "linear",
     "circular",
