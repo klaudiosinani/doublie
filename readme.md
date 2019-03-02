@@ -1,5 +1,5 @@
 <h1 align="center">
-  Doubly
+  Doublie
 </h1>
 
 
@@ -8,17 +8,17 @@
 </h4>
 
 <p align="center">
-  <a href="https://travis-ci.com/klaussinani/doubly">
-    <img alt="Build Status" src="https://travis-ci.com/klaussinani/doubly.svg?branch=master">
+  <a href="https://travis-ci.com/klaussinani/doublie">
+    <img alt="Build Status" src="https://travis-ci.com/klaussinani/doublie.svg?branch=master">
   </a>
-  <a href='https://coveralls.io/github/klaussinani/doubly?branch=master'>
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klaussinani/doubly/badge.svg?branch=master">
+  <a href='https://coveralls.io/github/klaussinani/doublie?branch=master'>
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klaussinani/doublie/badge.svg?branch=master">
   </a>
 </p>
 
 ## Description
 
-Progressive and minimal implementation of the circular and linear doubly linked list data structures in modern ES6.
+Progressive and minimal implementation of the circular and linear doublie linked list data structures in modern ES6.
 
 ## Contents
 
@@ -35,14 +35,14 @@ Progressive and minimal implementation of the circular and linear doubly linked 
 ## Install
 
 ```bash
-npm install doubly
+npm install doublie
 ```
 
 ## Usage
 
-Doubly exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
+Doublie exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
-Usage examples can be also found at the [`test`](https://github.com/klaussinani/doubly/tree/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klaussinani/doublie/tree/master/test) directory.
 
 ## In Depth
 
@@ -56,10 +56,10 @@ The following documentation holds for both circular & linear lists. The describe
 
 ## Development
 
-For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/doubly/blob/master/contributing.md).
+For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/doublie/blob/master/contributing.md).
 
 - Fork the repository and clone it to your machine
-- Navigate to your local fork: `cd doubly`
+- Navigate to your local fork: `cd doublie`
 - Install the project dependencies: `npm install` or `yarn install`
 - Lint the code and run the tests: `npm test` or `yarn test`
 
@@ -73,4 +73,4 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## License
 
-[MIT](https://github.com/klaussinani/doubly/blob/master/license.md)
+[MIT](https://github.com/klaussinani/doublie/blob/master/license.md)
