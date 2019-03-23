@@ -3,6 +3,7 @@
 class Node {
   constructor(options = {}) {
     this._next = null;
+    this._previous = null
     this._value = options.value;
   }
 
@@ -12,6 +13,14 @@ class Node {
 
   set next(node) {
     this._next = node;
+  }
+
+  get previous() {
+    return this._previous;
+  }
+
+  set previous(node) {
+    this._previous = node;
   }
 
   get value() {
