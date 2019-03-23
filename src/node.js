@@ -3,7 +3,7 @@
 class Node {
   constructor(options = {}) {
     this._next = null;
-    this._previous = null
+    this._previous = null;
     this._value = options.value;
   }
 
