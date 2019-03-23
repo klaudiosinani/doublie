@@ -10,10 +10,8 @@
     "url": "https://klaussinani.github.io"
   },
   "files": [
-    "index.js",
-    "circular.js",
-    "linear.js",
-    "node.js"
+    "src",
+    "index.js"
   ],
   "keywords": [
     "doublie",
