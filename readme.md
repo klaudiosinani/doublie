@@ -2,7 +2,6 @@
   Doublie
 </h1>
 
-
 <h4 align="center">
   ⚡ Doubly circular & linear linked lists for ES6
 </h4>
@@ -36,13 +35,21 @@ Visit the [contributing guidelines](https://github.com/klaussinani/doublie/blob/
 
 ## Install
 
+### Yarn
+
+```bash
+yarn add doublie
+```
+
+### NPM
+
 ```bash
 npm install doublie
 ```
 
 ## Usage
 
-Doublie exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
+Doublie exposes a progressive and composable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
 Usage examples can be also found at the [`test`](https://github.com/klaussinani/doublie/tree/master/test) directory.
 
