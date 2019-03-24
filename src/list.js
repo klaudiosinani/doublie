@@ -18,6 +18,18 @@ class List {
   get last() {
     return this._last;
   }
+
+  _arrayify(x) {
+    return Array.isArray(x) ? x : [x];
+  }
+
+  _isValid(index) {
+    return index >= 0 && index < this.length;
+  }
+
+  isEmpty() {
+    return this.length === 0 && !this.head;
+  }
 }
 
 module.exports = List;
