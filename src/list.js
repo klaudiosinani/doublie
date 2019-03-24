@@ -28,7 +28,7 @@ class List {
   }
 
   isEmpty() {
-    return this.length === 0 && !this.head;
+    return this.length === 0 && !this._head;
   }
 }
 
