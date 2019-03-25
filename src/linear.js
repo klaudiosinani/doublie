@@ -45,6 +45,12 @@ class Linear extends List {
 
     return this;
   }
+
+  toArray() {
+    const array = [];
+    this.forEach(x => array.push(x));
+    return array;
+  }
 }
 
 module.exports = Linear;
