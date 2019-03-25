@@ -46,6 +46,12 @@ class Linear extends List {
     return this;
   }
 
+  map(fn) {
+    const list = new Linear();
+    this.forEach(x => list.append(fn(x)));
+    return list;
+  }
+
   toArray() {
     const array = [];
     this.forEach(x => array.push(x));
