@@ -52,6 +52,22 @@ class Linear extends List {
     return list;
   }
 
+  node(index) {
+    if (!this._isValid(index)) {
+      throw new RangeError('List index out of bounds');
+    }
+
+    let count = 0;
+    let {_head: node} = this;
+
+    while (index !== count) {
+      node = node.next;
+      count++;
+    }
+
+    return node;
+  }
+
   prepend(...values) {
     values.forEach(value => {
       return this.isEmpty() ? this._initializeList(value) : this._appendHead(value);
