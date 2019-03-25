@@ -59,6 +59,12 @@ class Linear extends List {
     return this;
   }
 
+  reverse() {
+    const list = new Linear();
+    this.forEach(x => list.prepend(x));
+    return list;
+  }
+
   toArray() {
     const array = [];
     this.forEach(x => array.push(x));
