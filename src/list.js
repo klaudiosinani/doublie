@@ -27,6 +27,13 @@ class List {
     return index >= 0 && index < this.length;
   }
 
+  clear() {
+    this._head = null;
+    this._last = null;
+    this._length = 0;
+    return this;
+  }
+
   isEmpty() {
     return this.length === 0 && !this._head;
   }
