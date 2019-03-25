@@ -52,6 +52,13 @@ class Linear extends List {
     return list;
   }
 
+  prepend(...values) {
+    values.forEach(value => {
+      return this.isEmpty() ? this._initializeList(value) : this._appendHead(value);
+    });
+    return this;
+  }
+
   toArray() {
     const array = [];
     this.forEach(x => array.push(x));
