@@ -97,6 +97,16 @@ class Linear extends List {
     return this;
   }
 
+  reduce(fn, acc) {
+    let result = acc;
+
+    this.forEach(x => {
+      result = fn(result, x);
+    });
+
+    return result;
+  }
+
   map(fn) {
     const list = new Linear();
     this.forEach(x => list.append(fn(x)));
