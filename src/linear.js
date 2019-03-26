@@ -74,6 +74,18 @@ class Linear extends List {
     return this;
   }
 
+  filter(fn) {
+    const list = new Linear();
+
+    this.forEach(x => {
+      if (fn(x)) {
+        list.append(x);
+      }
+    });
+
+    return list;
+  }
+
   forEach(fn) {
     let {_head: node} = this;
 
