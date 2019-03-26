@@ -28,6 +28,41 @@ class Linear extends List {
     this._length++;
   }
 
+  _removeHead() {
+    const {next} = this._head;
+
+    if (!next) {
+      return this.clear();
+    }
+
+    this._head = next;
+    this._head.prev = null;
+    this._length--;
+    return this;
+  }
+
+  _removeLast() {
+    const {prev} = this._last;
+
+    if (!prev) {
+      return this.clear();
+    }
+
+    this._last = prev;
+    this._last.next = null;
+    this._length--;
+    return this;
+  }
+
+  _removeNode(index) {
+    const node = this.node(index);
+    const {prev, next} = node;
+    prev.next = next;
+    next.prev = prev;
+    this._length--;
+    return this;
+  }
+
   append(...values) {
     values.forEach(value => {
       if (this.isEmpty()) {
@@ -81,6 +116,18 @@ class Linear extends List {
       return this._appendHead(value);
     });
     return this;
+  }
+
+  remove(index) {
+    if (index === 0) {
+      return this._removeHead();
+    }
+
+    if (index === this.length - 1) {
+      return this._removeLast();
+    }
+
+    return this._removeNode(index);
   }
 
   reverse() {
