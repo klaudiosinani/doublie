@@ -129,6 +129,18 @@ class Linear extends List {
     return result;
   }
 
+  reduceRight(fn, acc) {
+    let result = acc;
+    let {_last: node} = this;
+
+    while (node) {
+      result = fn(result, node.value);
+      node = node.prev;
+    }
+
+    return result;
+  }
+
   map(fn) {
     const list = new Linear();
     this.forEach(x => list.append(fn(x)));
