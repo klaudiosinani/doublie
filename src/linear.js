@@ -3,7 +3,7 @@ const List = require('./list');
 const Node = require('./node');
 
 class Linear extends List {
-  _appendHead(value) {
+  _addHead(value) {
     const {_head} = this;
     const node = new Node(value);
     node.next = _head;
@@ -12,7 +12,7 @@ class Linear extends List {
     this._length++;
   }
 
-  _appendLast(value) {
+  _addLast(value) {
     const {_last} = this;
     const node = new Node(value);
     node.prev = _last;
@@ -69,7 +69,7 @@ class Linear extends List {
         return this._initializeList(value);
       }
 
-      return this._appendLast(value);
+      return this._addLast(value);
     });
     return this;
   }
@@ -169,7 +169,7 @@ class Linear extends List {
         return this._initializeList(value);
       }
 
-      return this._appendHead(value);
+      return this._addHead(value);
     });
     return this;
   }
