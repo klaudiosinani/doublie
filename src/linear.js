@@ -97,6 +97,11 @@ class Linear extends List {
     return this;
   }
 
+  get(index) {
+    const {value} = this.node(index);
+    return value;
+  }
+
   join(separator) {
     let result = '';
     let {_head: node} = this;
