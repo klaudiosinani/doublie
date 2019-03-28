@@ -7,7 +7,7 @@ class Linear extends List {
     const {_head} = this;
     const node = new Node(value);
     node.next = _head;
-    this._head.previous = node;
+    this._head.prev = node;
     this._head = node;
     this._length++;
   }
