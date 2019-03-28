@@ -21,6 +21,16 @@ class Linear extends List {
     this._length++;
   }
 
+  _addNode(value, index) {
+    const target = this.node(index);
+    const node = new Node(value);
+    node.next = target;
+    node.prev = target.prev;
+    target.prev.next = node;
+    target.prev = node;
+    this._length++;
+  }
+
   _initializeList(value) {
     const node = new Node(value);
     this._head = node;
@@ -100,6 +110,21 @@ class Linear extends List {
   get(index) {
     const {value} = this.node(index);
     return value;
+  }
+
+  insert({value, index}) {
+    this._arrayify(value).forEach(x => {
+      if (index === 0) {
+        return this.prepend(x);
+      }
+
+      if (index === this.length - 1) {
+        return this.append(x);
+      }
+
+      return this._addNode(x, index);
+    });
+    return this;
   }
 
   join(separator) {
