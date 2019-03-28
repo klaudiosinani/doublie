@@ -45,6 +45,19 @@ class Circular extends List {
     return this;
   }
 
+  forEach(fn) {
+    let {_head: node} = this;
+
+    if (node) {
+      do {
+        fn(node.value);
+        node = node.next;
+      } while (node !== this._head);
+    }
+
+    return this;
+  }
+
   prepend(...values) {
     values.forEach(value => {
       if (this.isEmpty()) {
