@@ -58,6 +58,12 @@ class Circular extends List {
     return this;
   }
 
+  map(fn) {
+    const list = new Circular();
+    this.forEach(x => list.append(fn(x)));
+    return list;
+  }
+
   prepend(...values) {
     values.forEach(value => {
       if (this.isEmpty()) {
