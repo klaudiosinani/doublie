@@ -84,6 +84,12 @@ class Circular extends List {
 
     return result;
   }
+
+  reverse() {
+    const list = new Circular();
+    this.forEach(x => list.prepend(x));
+    return list;
+  }
 }
 
 module.exports = Circular;
