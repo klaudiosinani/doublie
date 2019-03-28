@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "ava": "1.4.1",
+    "typescript": "^3.3.4000",
     "xo": "*"
   },
   "xo": {
