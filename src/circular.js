@@ -3,6 +3,17 @@ const List = require('./list');
 const Node = require('./node');
 
 class Circular extends List {
+  _addHead(value) {
+    const {_head, _last} = this;
+    const node = new Node(value);
+    node.next = _head;
+    node.prev = _last;
+    this._head.prev = node;
+    this._last.next = node;
+    this._head = node;
+    this._length++;
+  }
+
   _addLast(value) {
     const {_head, _last} = this;
     const node = new Node(value);
@@ -30,6 +41,17 @@ class Circular extends List {
       }
 
       return this._addLast(value);
+    });
+    return this;
+  }
+
+  prepend(...values) {
+    values.forEach(value => {
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
+
+      return this._addHead(value);
     });
     return this;
   }
