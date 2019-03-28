@@ -90,6 +90,12 @@ class Circular extends List {
     this.forEach(x => list.prepend(x));
     return list;
   }
+
+  toArray() {
+    const array = [];
+    this.forEach(x => array.push(x));
+    return array;
+  }
 }
 
 module.exports = Circular;
