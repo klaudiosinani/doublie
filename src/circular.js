@@ -68,6 +68,16 @@ class Circular extends List {
     });
     return this;
   }
+
+  reduce(fn, acc) {
+    let result = acc;
+
+    this.forEach(x => {
+      result = fn(result, x);
+    });
+
+    return result;
+  }
 }
 
 module.exports = Circular;
