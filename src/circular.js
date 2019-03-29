@@ -34,6 +34,43 @@ class Circular extends List {
     this._length++;
   }
 
+  _removeHead() {
+    const {next: node} = this._head;
+
+    if (node === this._head) {
+      return this.clear();
+    }
+
+    node.prev = this._last;
+    this._last.next = node;
+    this._head = node;
+    this._length--;
+    return this;
+  }
+
+  _removeLast() {
+    const {prev: node} = this._last;
+
+    if (node === this._last) {
+      return this.clear();
+    }
+
+    node.next = this._head;
+    this._head.prev = node;
+    this._last = node;
+    this._length--;
+    return this;
+  }
+
+  _removeNode(index) {
+    const node = this.node(index);
+    const {prev, next} = node;
+    prev.next = next;
+    next.prev = prev;
+    this._length--;
+    return this;
+  }
+
   append(...values) {
     values.forEach(value => {
       if (this.isEmpty()) {
@@ -125,6 +162,18 @@ class Circular extends List {
     }
 
     return result;
+  }
+
+  remove(index) {
+    if (index === 0) {
+      return this._removeHead();
+    }
+
+    if (index === this.length - 1) {
+      return this._removeLast();
+    }
+
+    return this._removeNode(index);
   }
 
   reduce(fn, acc) {
