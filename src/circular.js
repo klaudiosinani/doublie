@@ -75,6 +75,25 @@ class Circular extends List {
     return this;
   }
 
+  join(separator) {
+    let result = '';
+    let {_head: node} = this;
+
+    if (node) {
+      do {
+        result += node.value;
+
+        if (node.next) {
+          result += separator;
+        }
+
+        node = node.next;
+      } while (node !== this._head);
+    }
+
+    return result;
+  }
+
   reduce(fn, acc) {
     let result = acc;
 
