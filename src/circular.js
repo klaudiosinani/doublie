@@ -245,6 +245,10 @@ class Circular extends List {
     this.forEach(x => list.append(x));
     return list;
   }
+
+  toString() {
+    return this.join(',');
+  }
 }
 
 module.exports = Circular;
