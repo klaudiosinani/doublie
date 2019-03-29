@@ -70,6 +70,11 @@ class Circular extends List {
     return this;
   }
 
+  get(index) {
+    const {value} = this.node(index);
+    return value;
+  }
+
   map(fn) {
     const list = new Circular();
     this.forEach(x => list.append(fn(x)));
