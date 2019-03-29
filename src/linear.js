@@ -118,10 +118,6 @@ class Linear extends List {
         return this.prepend(x);
       }
 
-      if (index === this.length - 1) {
-        return this.append(x);
-      }
-
       return this._addNode(x, index);
     });
     return this;
