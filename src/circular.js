@@ -45,6 +45,18 @@ class Circular extends List {
     return this;
   }
 
+  filter(fn) {
+    const list = new Circular();
+
+    this.forEach(x => {
+      if (fn(x)) {
+        list.append(x);
+      }
+    });
+
+    return list;
+  }
+
   forEach(fn) {
     let {_head: node} = this;
 
