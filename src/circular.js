@@ -85,6 +85,20 @@ class Circular extends List {
     return result;
   }
 
+  reduceRight(fn, acc) {
+    let result = acc;
+    let {_last: node} = this;
+
+    if (node) {
+      do {
+        result = fn(result, node.value);
+        node = node.prev;
+      } while (node !== this._last);
+    }
+
+    return result;
+  }
+
   reverse() {
     const list = new Circular();
     this.forEach(x => list.prepend(x));
