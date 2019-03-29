@@ -175,7 +175,7 @@ class Circular extends List {
       do {
         result += node.value;
 
-        if (node.next) {
+        if (node.next !== this._head) {
           result += separator;
         }
 
