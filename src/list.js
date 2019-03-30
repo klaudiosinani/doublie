@@ -27,6 +27,30 @@ class List {
     return index >= 0 && index < this.length;
   }
 
+  _traverse(index) {
+    let count = 0;
+    let {_head: node} = this;
+
+    while (index !== count) {
+      node = node.next;
+      count++;
+    }
+
+    return node;
+  }
+
+  _traverseRight(index) {
+    let count = this.length - (index + 1);
+    let {_last: node} = this;
+
+    while (count !== 0) {
+      node = node.prev;
+      count--;
+    }
+
+    return node;
+  }
+
   clear() {
     this._head = null;
     this._last = null;
@@ -44,6 +68,18 @@ class List {
 
   isLinear() {
     return this.constructor.name === 'Linear';
+  }
+
+  node(index) {
+    if (!this._isValid(index)) {
+      throw new RangeError('List index out of bounds');
+    }
+
+    if (index < this.length / 2) {
+      return this._traverse(index);
+    }
+
+    return this._traverseRight(index);
   }
 }
 
