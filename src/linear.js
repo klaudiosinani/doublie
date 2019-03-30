@@ -123,7 +123,7 @@ class Linear extends List {
     return this;
   }
 
-  join(separator) {
+  join(separator = ',') {
     let result = '';
     let {_head: node} = this;
 
