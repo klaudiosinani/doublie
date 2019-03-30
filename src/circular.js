@@ -1,5 +1,4 @@
 'use strict';
-const Linear = require('./linear');
 const List = require('./list');
 const Node = require('./node');
 
@@ -241,6 +240,7 @@ class Circular extends List {
   }
 
   toLinear() {
+    const Linear = require('./linear');
     const list = new Linear();
     this.forEach(x => list.append(x));
     return list;
