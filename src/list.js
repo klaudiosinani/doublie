@@ -38,6 +38,10 @@ class List {
     return this.length === 0 && !this._head;
   }
 
+  isCircular() {
+    return this.constructor.name === 'Circular';
+  }
+
   isLinear() {
     return this.constructor.name === 'Linear';
   }
