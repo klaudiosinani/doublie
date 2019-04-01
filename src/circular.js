@@ -133,23 +133,6 @@ class Circular extends List {
     return this;
   }
 
-  map(fn) {
-    const list = new Circular();
-    this.forEach(x => list.append(fn(x)));
-    return list;
-  }
-
-  prepend(...values) {
-    values.forEach(value => {
-      if (this.isEmpty()) {
-        return this._initializeList(value);
-      }
-
-      return this._addHead(value);
-    });
-    return this;
-  }
-
   join(separator = ',') {
     let result = '';
     let {_head: node} = this;
@@ -169,16 +152,21 @@ class Circular extends List {
     return result;
   }
 
-  remove(index) {
-    if (index === 0) {
-      return this._removeHead();
-    }
+  map(fn) {
+    const list = new Circular();
+    this.forEach(x => list.append(fn(x)));
+    return list;
+  }
 
-    if (index === this.length - 1) {
-      return this._removeLast();
-    }
+  prepend(...values) {
+    values.forEach(value => {
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
 
-    return this._removeNode(index);
+      return this._addHead(value);
+    });
+    return this;
   }
 
   reduce(fn, acc) {
@@ -203,6 +191,18 @@ class Circular extends List {
     }
 
     return result;
+  }
+
+  remove(index) {
+    if (index === 0) {
+      return this._removeHead();
+    }
+
+    if (index === this.length - 1) {
+      return this._removeLast();
+    }
+
+    return this._removeNode(index);
   }
 
   reverse() {
