@@ -58,12 +58,12 @@ class List {
     return this;
   }
 
-  isEmpty() {
-    return this.length === 0 && !this._head;
-  }
-
   isCircular() {
     return this.constructor.name === 'Circular';
+  }
+
+  isEmpty() {
+    return this.length === 0 && !this._head;
   }
 
   isLinear() {

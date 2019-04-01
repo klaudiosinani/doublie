@@ -140,6 +140,23 @@ class Linear extends List {
     return result;
   }
 
+  map(fn) {
+    const list = new Linear();
+    this.forEach(x => list.append(fn(x)));
+    return list;
+  }
+
+  prepend(...values) {
+    values.forEach(value => {
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
+
+      return this._addHead(value);
+    });
+    return this;
+  }
+
   reduce(fn, acc) {
     let result = acc;
 
@@ -160,23 +177,6 @@ class Linear extends List {
     }
 
     return result;
-  }
-
-  map(fn) {
-    const list = new Linear();
-    this.forEach(x => list.append(fn(x)));
-    return list;
-  }
-
-  prepend(...values) {
-    values.forEach(value => {
-      if (this.isEmpty()) {
-        return this._initializeList(value);
-      }
-
-      return this._addHead(value);
-    });
-    return this;
   }
 
   remove(index) {
