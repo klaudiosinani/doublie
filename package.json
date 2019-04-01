@@ -9,6 +9,7 @@
     "email": "klaussinani@gmail.com",
     "url": "https://klaussinani.github.io"
   },
+  "types": "types/doublie.d.ts",
   "files": [
     "src",
     "index.js"
