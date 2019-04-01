@@ -206,12 +206,6 @@ class Circular extends List {
     return list;
   }
 
-  set({value, index}) {
-    const node = this.node(index);
-    node.value = value;
-    return this;
-  }
-
   toArray() {
     const array = [];
     this.forEach(x => array.push(x));

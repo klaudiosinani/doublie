@@ -86,6 +86,12 @@ class List {
 
     return this._traverseRight(index);
   }
+
+  set({value, index}) {
+    const node = this.node(index);
+    node.value = value;
+    return this;
+  }
 }
 
 module.exports = List;
