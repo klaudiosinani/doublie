@@ -107,11 +107,6 @@ class Linear extends List {
     return this;
   }
 
-  get(index) {
-    const {value} = this.node(index);
-    return value;
-  }
-
   insert({value, index}) {
     this._arrayify(value).forEach(x => {
       if (index === 0) {
