@@ -82,6 +82,8 @@ declare namespace circular {
 }
 
 declare namespace doublie {
+  export interface Circular<T = any> extends circular.Instance<T> {}
+  export interface Linear<T = any> extends linear.Instance<T> {}
   export interface Node<T = any> extends node.Instance<T> {}
 }
 
