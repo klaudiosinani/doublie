@@ -82,7 +82,7 @@ declare namespace circular {
 }
 
 declare namespace doublie {
-  export interface Node extends node.Instance {}
+  export interface Node<T = any> extends node.Instance<T> {}
 }
 
 declare const doublie: {
