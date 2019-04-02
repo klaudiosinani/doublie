@@ -175,6 +175,10 @@ class Linear extends List {
   }
 
   remove(index) {
+    if (!this._isValid(index)) {
+      throw new RangeError('List index out of bounds');
+    }
+
     if (index === 0) {
       return this._removeHead();
     }
