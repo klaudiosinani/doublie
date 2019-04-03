@@ -25,7 +25,8 @@
     "structure"
   ],
   "scripts": {
-    "test": "xo"
+    "lint": "xo",
+    "test": "npm run lint && nyc ava"
   },
   "devDependencies": {
     "ava": "1.4.1",
