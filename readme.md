@@ -53,6 +53,41 @@ Doublie exposes a progressive and composable API, that can be utilized through a
 
 Usage examples can be also found at the [`test`](https://github.com/klaussinani/doublie/tree/master/test) directory.
 
+```js
+const {Circular, Linear} = require('singlie');
+
+const linear = new Linear();
+linear.prepend('A').append('B');
+linear.node(0);
+// => Node { next: Node { next: null, prev: [Circular], value: 'B' }, prev: null, value: 'A' }
+linear.node(0).next;
+// => Node { next: null, prev: Node { next: [Circular], prev: null, value: 'A' }, value: 'B' }
+linear.node(0).next.next;
+// => null
+linear.map(x => `[${x}]`).reverse().join(' -> ');
+// => [B] -> [A]
+
+const circular = new Circular();
+circular.append('B').prepend('A');
+circular.node(0);
+// => Node {
+//  next: Node { next: [Circular], prev: [Circular], value: 'B' },
+//  prev: Node { next: [Circular], prev: [Circular], value: 'B' },
+//  value: 'A' }
+circular.node(0).next;
+// => Node {
+//  next: Node { next: [Circular], prev: [Circular], value: 'A' },
+//  prev: Node { next: [Circular], prev: [Circular], value: 'A' },
+//  value: 'B' }
+circular.node(0).next.next;
+// => Node {
+//  next: Node { next: [Circular], prev: [Circular], value: 'B' },
+//  prev: Node { next: [Circular], prev: [Circular], value: 'B' },
+//  value: 'A' }
+circular.map(x => `[${x}]`).reverse().toArray();
+// => [ '[B]', '[A]' ]
+```
+
 ## In Depth
 
 ### Linear Doubly Linked List
