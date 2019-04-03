@@ -53,11 +53,6 @@ class Linear extends List {
 
   _removeLast() {
     const {prev} = this._last;
-
-    if (!prev) {
-      return this.clear();
-    }
-
     this._last = prev;
     this._last.next = null;
     this._length--;

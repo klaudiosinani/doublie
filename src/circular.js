@@ -60,11 +60,6 @@ class Circular extends List {
 
   _removeLast() {
     const {prev: node} = this._last;
-
-    if (node === this._last) {
-      return this.clear();
-    }
-
     node.next = this._head;
     this._head.prev = node;
     this._last = node;
