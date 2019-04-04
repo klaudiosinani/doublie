@@ -539,6 +539,25 @@ list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
 // => 67
 ```
 
+#### list.`reduceRight(function, initialValue)`
+
+- Return Type: `Any`
+
+Executes a reducer function on each member of the list, from right-to-left, resulting in a single output value.
+
+##### **`function`**
+
+- Type: `Function`
+
+The reducer function takes two arguments: accumulator & current value. The reducer function's returned value is assigned to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the final, single resulting value.
+
+```js
+list.append('A', 'B', 'C', 'D', 'E', 'F');
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+list.reduceRight((acc, x) => acc + x, '');
+// => 'FEDCBA'
+```
+
 #### list.`toString()`
 
 - Return Type: `String`
