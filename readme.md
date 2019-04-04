@@ -153,7 +153,7 @@ linear.reverse().map(x => `[${x}]`).join('->');
 linear.clear(); // => Linear { head: null, length: 0, last: null }
 
 // Reduce values to a final sum
-linear.append(5, 10, 15, 20, 25).reduce((x + y) => x + y, 0);
+linear.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
 //=> 75
 ```
 
@@ -224,7 +224,7 @@ circular.reverse().map(x => `[${x}]`).join('->');
 circular.clear(); // => Circular { head: null, length: 0, last: null }
 
 // Reduce values to a final sum
-circular.append(5, 10, 15, 20, 25).reduce((x + y) => x + y, 0);
+circular.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
 //=> 75
 ```
 
