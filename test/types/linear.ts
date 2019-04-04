@@ -1,17 +1,18 @@
-import { Linear } from './../../.';
+import {Linear} from '../..';
 
-const linear = new Linear<string>();
+const linear = new Linear();
 
 // Append a node holding the value `E`
 linear.append('E');
-linear.head; // => Node { next: null, value: 'E' }
-linear.last; // => Node { next: null, value: 'E' }
+linear.head; // => Node { value: 'E', next: null, prev: null }
+linear.last; // => Node { value: 'E', next: null, prev: null }
 linear.get(0); // => E
 
 // Return the node corresponding to the index
-linear.node(0); // => Node { next: null, value: 'E' }
+linear.node(0); // => Node { value: 'E', next: null, prev: null }
 linear.node(0).value; // => E
 linear.node(0).next; // => null
+linear.node(0).prev; // => null
 
 // Append multiple nodes at once
 linear.append('F', 'G');
@@ -25,7 +26,7 @@ linear.prepend('B', 'A');
 linear.join(' '); // => A B E F G
 
 // Insert multiple nodes to the given index
-linear.insert({ value: ['D', 'C', 'X'], index: 2 });
+linear.insert({value: ['D', 'C', 'X'], index: 2});
 linear.join(' '); // => A B X C D E F G
 
 // Remove the node corresponding to the index
@@ -35,7 +36,7 @@ linear.join(' '); // => A B C D E F G
 // Update the value of the node corresponding to the index
 linear.node(linear.length - 1).value = '!';
 linear.join(' '); // => A B C D E F !
-linear.set({ value: 'G', index: linear.length - 1 });
+linear.set({value: 'G', index: linear.length - 1});
 linear.join(' '); // => A B C D E F G
 
 // Iterate over the list
@@ -44,11 +45,12 @@ linear.forEach(x => array.push(x));
 // => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
 
 // Chain multiple methods
-linear
-  .reverse()
-  .map(x => `[${x}]`)
-  .join('->');
+linear.reverse().map(x => `[${x}]`).join('->');
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-linear.clear(); // => Linear { head: null, last: null, length: 0 }
+linear.clear(); // => Linear { head: null, length: 0, last: null }
+
+// Reduce values to a final sum
+linear.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
+//=> 75
