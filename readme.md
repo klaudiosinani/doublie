@@ -59,34 +59,41 @@ const {Circular, Linear} = require('doublie');
 
 const linear = new Linear();
 linear.prepend('A').append('B');
-linear.node(0);
+linear.head;
 // => Node { next: Node { next: null, prev: [Circular], value: 'B' }, prev: null, value: 'A' }
-linear.node(0).next;
+linear.head.next;
 // => Node { next: null, prev: Node { next: [Circular], prev: null, value: 'A' }, value: 'B' }
-linear.node(0).next.next;
+linear.head.next.next;
+// => null
+linear.head.prev;
 // => null
 linear.map(x => `[${x}]`).reverse().join(' -> ');
 // => [B] -> [A]
 
 const circular = new Circular();
-circular.append('B').prepend('A');
-circular.node(0);
+circular.append(2).prepend(1);
+circular.head;
 // => Node {
-//  next: Node { next: [Circular], prev: [Circular], value: 'B' },
-//  prev: Node { next: [Circular], prev: [Circular], value: 'B' },
+//  next: Node { next: [Circular], prev: [Circular], value: 2 },
+//  prev: Node { next: [Circular], prev: [Circular], value: 1 },
 //  value: 'A' }
-circular.node(0).next;
+circular.head.next;
 // => Node {
-//  next: Node { next: [Circular], prev: [Circular], value: 'A' },
-//  prev: Node { next: [Circular], prev: [Circular], value: 'A' },
-//  value: 'B' }
-circular.node(0).next.next;
+//  next: Node { next: [Circular], prev: [Circular], value: 1 },
+//  prev: Node { next: [Circular], prev: [Circular], value: 1 },
+//  value: 2 }
+circular.head.next.next;
 // => Node {
-//  next: Node { next: [Circular], prev: [Circular], value: 'B' },
-//  prev: Node { next: [Circular], prev: [Circular], value: 'B' },
-//  value: 'A' }
-circular.map(x => `[${x}]`).reverse().toArray();
-// => [ '[B]', '[A]' ]
+//  next: Node { next: [Circular], prev: [Circular], value: 2 },
+//  prev: Node { next: [Circular], prev: [Circular], value: 2 },
+//  value: 1 }
+circular.head.prev;
+// => Node {
+//  next: Node { next: [Circular], prev: [Circular], value: 1 },
+//  prev: Node { next: [Circular], prev: [Circular], value: 1 },
+//  value: 2 }
+circular.reduce((x, y) => x > y ? x : y, -Infinity);
+// => 2
 ```
 
 ## In Depth
