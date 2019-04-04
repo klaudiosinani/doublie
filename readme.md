@@ -93,7 +93,7 @@ circular.map(x => `[${x}]`).reverse().toArray();
 
 ### Linear Doubly Linked List
 
-Linear doubly linked lists can contain multiple nodes, where each node has only a `value`, a `prev` and `next` attribute. The `value` attribute holds the value stored inside of the node and the `prev` & `next` attributes point to the previous and next nodes in line respectively. The only exceptions are that the first node of the list has `null` stored to its `prev` attribute, indicating the lack of nodes before it thus the beginning of the list, and the last node has `null` stored to its `next` attribute, indicating the lack of further nodes down the line, thus the end of the list. 
+Linear doubly linked lists can contain multiple nodes, where each node has only a `value`, a `prev` and `next` attribute. The `value` attribute holds the value stored inside of the node and the `prev` & `next` attributes point to the previous and next nodes in line respectively. The only exceptions are that the first node of the list has `null` stored to its `prev` attribute, indicating the lack of nodes before it, thus the beginning of the list, and the last node has `null` stored to its `next` attribute, indicating the lack of further nodes down the line, thus the end of the list. 
 
 The following example demonstrates the operations that can be performed on any linear doubly linked list.
 
@@ -164,6 +164,7 @@ Circular doubly linked lists can also contain multiple nodes, where again each n
 The following example demonstrates the operations that can be performed on any circular doubly linked list.
 
 ```js
+'use strict';
 const {Circular} = require('doublie');
 
 const circular = new Circular();
