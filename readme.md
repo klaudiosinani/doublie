@@ -55,7 +55,7 @@ Usage examples can be also found at the [`test`](https://github.com/klaussinani/
 
 ```js
 'use strict';
-const {Circular, Linear} = require('singlie');
+const {Circular, Linear} = require('doublie');
 
 const linear = new Linear();
 linear.prepend('A').append('B');
@@ -99,7 +99,7 @@ The following example demonstrates the operations that can be performed on any l
 
 ```js
 'use strict';
-const {Linear} = require('singlie');
+const {Linear} = require('doublie');
 
 const linear = new Linear();
 
@@ -164,7 +164,7 @@ Circular doubly linked lists can also contain multiple nodes, where again each n
 The following example demonstrates the operations that can be performed on any circular doubly linked list.
 
 ```js
-const {Circular} = require('singlie');
+const {Circular} = require('doublie');
 
 const circular = new Circular();
 
@@ -231,6 +231,449 @@ circular.append(5, 10, 15, 20, 25).reduce((x + y) => x + y, 0);
 ## API
 
 The following documentation holds for both circular & linear lists. The described `list` instance is used to depict the same methods that are applicable to both a linear and a circular linked list, without overlooking their above described differences and unique qualities.
+
+#### list.`append(value[, value])`
+
+- Return Type: `Linked List`
+
+Appends one of more nodes to the list.
+
+##### **`value`**
+
+- Type: `any`
+
+Can be one or more comma delimited values. Each value corresponds to a single node.
+
+```js
+list.append('A', 'B', 'C', 'D');
+// => { value: 'A', prev: [List], next: { value: 'B', next: [List] } }
+```
+
+#### list.`prepend(value[, value])`
+
+- Return Type: `Linked List`
+
+Prepends one of more nodes to the list.
+
+##### **`value`**
+
+- Type: `any`
+
+Can be one or more comma delimited values. Each value corresponds to a single node.
+
+```js
+list.append('C' , 'D');
+// => { value: 'C', next: [List], prev: [List] }
+list.prepend('B', 'A');
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: { value: 'C', prev[List], next: [List] } } }
+```
+
+#### list.`head`
+
+- Return Type: `Node | null`
+
+Returns the first node / head on the list.
+
+```js
+list.append('A', 'B');
+list.head;
+// => Node { value: 'A', prev: [List], next: [List] }
+```
+
+#### list.`last`
+
+- Return Type: `Node | null`
+
+Returns the last node on the list.
+
+```js
+list.append('A', 'B');
+list.last;
+// => Node { value: 'B', prev: [List], next: [List] }
+```
+
+#### list.`length`
+
+- Return Type: `Integer`
+
+Returns the length of the list.
+
+```js
+list.append('A', 'B');
+list.length;
+// => 2
+```
+
+#### list.`isEmpty()`
+
+- Return Type: `Boolean`
+
+Checks whether or not the list is empty.
+
+```js
+list.append('A', 'B');
+list.isEmpty();
+// => false
+```
+
+#### list.`insert({value[, value], index})`
+
+- Return Type: `Linked List`
+
+Inserts one or more nodes to the given index.
+
+##### **`value`**
+
+- Type: `any`
+
+Can be one or more comma delimited values. Each value corresponds to a single node.
+
+##### **`index`**
+
+- Type: `Integer`
+
+Can be an integer corresponding to a list index.
+
+```js
+list.append('A', 'B', 'E');
+list.insert({value: ['C', 'D'], index: 1});
+// => { value: 'A', prev: [List], next: { value: 'D', prev: [List], next: { value: 'C', prev: [List], next: { value: 'B', prev: [List], next: [List] } } } }
+```
+
+#### list.`node(index)`
+
+- Return Type: `Node`
+
+Return the node corresponding to the given index.
+
+##### **`index`**
+
+- Type: `Integer`
+
+Can be an integer corresponding to a list index.
+
+```js
+list.append('A', 'B', 'C', 'D');
+const node = list.node(0);
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+node.value;
+// => A
+node.next;
+// => { value: 'B', prev: [List], next: [List] }
+```
+
+#### list.`get(index)`
+
+- Return Type: `any`
+
+Return the value of node corresponding to the given index.
+
+##### **`index`**
+
+- Type: `Integer`
+
+Can be an integer corresponding to a list index.
+
+```js
+list.append('A', 'B');
+
+list.get(0);
+// => A
+list.get(0);
+// => B
+```
+
+#### list.`remove(index)`
+
+- Return Type: `Linked List`
+
+Removes from the list the node located to the given index.
+
+##### **`index`**
+
+- Type: `Integer`
+
+Can be an integer corresponding to a list index.
+
+If not provided, the last node of the list will be removed.
+
+```js
+list.append('A', 'B', 'C', 'D');
+// => { value: 'A', prev: [List], next: [List] }
+list.remove(0);
+// => { value: 'B', prev: [List], next: [List] }
+list.remove(0);
+// => { value: 'C', prev: [List], next: [List] }
+```
+
+#### list.`toArray()`
+
+- Return Type: `Array`
+
+Converts the list into an array.
+
+```js
+list.append('A', 'B', 'C');
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+const array = list.toArray();
+// => [ 'A', 'B', 'C' ]
+```
+
+#### list.`clear()`
+
+- Return Type: `Linked List`
+
+Removes all nodes from the list.
+
+```js
+list.append('A', 'B', 'C');
+list.head;
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+list.clear();
+// => { head: null, last: null, length: 0 }
+```
+
+#### list.`join([separator])`
+
+- Return Type: `String`
+
+Joins the values of all nodes on the list into a string and returns the string.
+
+##### **`separator`**
+
+- Type: `String`
+- Default: `Comma ','`
+
+Specifies a string to separate each pair of adjacent node values of the array. 
+
+If omitted, the node values are separated with a `comma ','`.
+
+```js
+list.append('A', 'B', 'C');
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+list.join();
+// => 'A,B,C'
+list.join('');
+// => 'ABC'
+list.join(' ');
+// => 'A B C'
+```
+
+#### list.`forEach(function)`
+
+- Return Type: `Linked List`
+
+Executes a provided function once for each node value.
+
+##### **`function`**
+
+- Type: `Function`
+
+Function to execute for each node value.
+
+```js
+const array = [];
+list.append('A', 'B', 'C');
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+list.forEach(x => array.push(x));
+console.log(array);
+// => [ 'A', 'B', 'C' ];
+```
+
+#### list.`map(function)`
+
+- Return Type: `Linked List`
+
+Executes a provided function once for each node value.
+
+##### **`function`**
+
+- Type: `Function`
+
+Function that produces a new node value for the new list.
+
+```js
+list.append('A', 'B', 'C');
+// => { value: 'A', prev: [List], next: { value: 'B', prev: [List], next: [List] } }
+const mapped = list.map(x => `[${x}]`);
+array.join(' ');
+// => '[A] [B] [C]'
+```
+
+#### list.`filter(function)`
+
+- Return Type: `Linked List`
+
+Creates a new liked list with all elements that pass the test implemented by the provided function.
+
+##### **`function`**
+
+- Type: `Function`
+
+Function is a predicate, to test each element of the list. Return true to keep the element, false otherwise.
+
+```js
+list.append(1, 2, 3, 4, 5, 6);
+// => { value: 1, prev: [List], next: { value: 2, prev: [List], next: [List] } }
+const filtered = list.filter(x => x % 2 > 0);
+filtered.toArray();
+// => [ 1, 3, 5 ]
+```
+
+#### list.`reduce(function, initialValue)`
+
+- Return Type: `Any`
+
+Executes a reducer function on each member of the list resulting in a single output value.
+
+##### **`function`**
+
+- Type: `Function`
+
+The reducer function takes two arguments: accumulator & current value. The reducer function's returned value is assigned to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the final, single resulting value.
+
+```js
+list.append(20, 50, 35, 41, 5, 67);
+// => { value: 1, prev: [List], next: { value: 2, prev: [List], next: [List] } }
+list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
+// => 67
+```
+
+#### list.`toString()`
+
+- Return Type: `String`
+
+Returns a string representing the specified list and its elements.
+
+```js
+list.append(20, 50, 35, 41, 5, 67);
+// => '20,50,35,41,5,67'
+```
+
+#### list.`isCircular()`
+
+- Return Type: `Boolean`
+
+Returns `true` if the linked list is circular or `false` if it is linear.
+
+```js
+const {Circular} = require('doublie');
+
+const list = new Circular();
+
+list.isCircular();
+// => true
+```
+
+#### list.`isLinear()`
+
+- Return Type: `Boolean`
+
+Returns `true` if the linked list is linear or `false` if it is circular.
+
+```js
+const {Circular} = require('doublie');
+
+const list = new Circular();
+
+list.isLinear();
+// => false
+```
+
+#### linear.`toCircular()`
+
+- Return Type: `Circular Linked List`
+
+Returns a new circular linked list containing all elements of the original linear linked list.
+
+```js
+const {Linear} = require('doublie');
+
+const list = new Linear();
+
+list.toCircular().isLinear();
+// => false
+```
+
+#### circular.`toLinear()`
+
+- Return Type: `Linear Linked List`
+
+Returns a new linear linked list containing all elements of the original circular linked list.
+
+```js
+const {Circular} = require('doublie');
+
+const list = new Circular();
+
+list.toLinear().isLinear();
+// => true
+```
+
+Also available, along with the `Circular` and `Linear` exposed classes, is the `Node` class, mainly useful for testing purposes, since it can be utilized to compare nodes residing in linear & circular linked lists. The class has a unary constructor method, with a `'value'` parameter, corresponding to the data stored in the created instance. 
+
+Additionally, each `Node` instance has the following two public properties: 
+
+#### node.`value`
+
+- Return Type: `any`
+
+The value that the node contains.
+
+```js
+const {Node} = require('doublie');
+
+const node = new Node('A');
+// => { value: 'A', next: null }
+
+node.value;
+//=> 'A'
+
+node.value = 'B' // Update the `value` attribute to 'B'
+// => { value: 'B', next: null }
+```
+
+#### node.`prev`
+
+- Return Type: `Node | null`
+
+The previous node in line, that the node instance points to.
+
+```js
+const {Node} = require('doublie');
+
+const node1 = new Node('A');
+// => { value: 'A', prev: null, next: null }
+
+node1.prev
+//=> null
+
+const node2 = new Node('B');
+
+node1.prev = node2; // `node1` now points to `node2`
+//=> { value: 'A', prev: { value: 'B', prev: null, next: null }, next: null }
+```
+
+#### node.`next`
+
+- Return Type: `Node | null`
+
+The next node in line, that the node instance points to.
+
+```js
+const {Node} = require('doublie');
+
+const node1 = new Node('A');
+// => { value: 'A', prev: null, next: null }
+
+node1.next
+//=> null
+
+const node2 = new Node('B');
+
+node1.next = node2; // `node1` now points to `node2`
+//=> { value: 'A', prev: null, next: { value: 'B', prev: null, next: null } }
+```
 
 ## Development
 
