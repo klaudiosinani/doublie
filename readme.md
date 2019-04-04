@@ -17,7 +17,7 @@
 
 ## Description
 
-Progressive and minimal implementation of the circular and linear doublie linked list data structures in modern ES6.
+Progressive implementation of the circular and linear doubly linked list data structures in ES6.
 
 Visit the [contributing guidelines](https://github.com/klaussinani/doublie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
