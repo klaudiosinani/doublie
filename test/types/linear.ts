@@ -54,3 +54,7 @@ linear.clear(); // => Linear { head: null, length: 0, last: null }
 // Reduce values to a final sum
 linear.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
 //=> 75
+
+linear.append('R', 'O', 'G');
+linear.includes('G'); //=> true
+linear.includes('D'); //=> false

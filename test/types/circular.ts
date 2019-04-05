@@ -60,3 +60,7 @@ circular.clear(); // => Circular { head: null, length: 0, last: null }
 // Reduce values to a final sum
 circular.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
 //=> 75
+
+circular.append('R', 'O', 'G');
+circular.includes('G'); //=> true
+circular.includes('D'); //=> false
