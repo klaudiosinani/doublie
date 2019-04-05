@@ -568,6 +568,29 @@ list.reduceRight((acc, x) => acc + x, '');
 // => 'FEDCBA'
 ```
 
+#### list.`includes(value)`
+
+- Return Type: `Boolean`
+
+The method determines whether a list, circular or linear, includes a certain value among its nodes, returning `true` or `false` as appropriate.
+
+##### **`value`**
+
+- Type: `Any`
+
+The value to search for.
+
+```js
+list.append(20, 50, 35, 41, 5, 67);
+// => { value: 20, prev: [List], next: { value: 50, prev: [List], next: [List] } }
+list.includes();
+// => false
+list.includes(0);
+// => false
+list.includes(50);
+// => true
+```
+
 #### list.`toString()`
 
 - Return Type: `String`
