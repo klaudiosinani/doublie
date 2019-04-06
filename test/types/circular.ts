@@ -64,3 +64,6 @@ circular.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
 circular.append('R', 'O', 'G');
 circular.includes('G'); //=> true
 circular.includes('D'); //=> false
+
+circular.indexOf('G'); //=> 2
+circular.indexOf('D'); //=> -1

@@ -58,3 +58,6 @@ linear.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
 linear.append('R', 'O', 'G');
 linear.includes('G'); //=> true
 linear.includes('D'); //=> false
+
+linear.indexOf('G'); //=> 2
+linear.indexOf('D'); //=> -1
