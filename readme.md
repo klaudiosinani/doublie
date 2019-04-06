@@ -17,7 +17,7 @@
 
 ## Description
 
-Progressive implementation of the circular and linear doubly linked list data structures in ES6.
+Progressive implementation of the circular and linear doubly linked list data structures in ES6 with TypeScript support.
 
 Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
 
