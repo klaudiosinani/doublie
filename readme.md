@@ -761,6 +761,7 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## Related
 
+- [bstrie](https://github.com/klaussinani/bstrie) - Binary search trees for ES6
 - [singlie](https://github.com/klaussinani/singlie) - Singly circular & linear linked lists for ES6
 
 ## Team
