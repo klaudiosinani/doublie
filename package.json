@@ -23,7 +23,8 @@
     "linked",
     "list",
     "data",
-    "structure"
+    "structure",
+    "typescript"
   ],
   "scripts": {
     "lint": "xo",
