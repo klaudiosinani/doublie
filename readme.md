@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  ⚡ Doubly circular & linear linked lists for ES6
+  Doubly circular & linear linked lists for ES6
 </h4>
 
 <p align="center">
