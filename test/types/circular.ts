@@ -6,6 +6,10 @@ const circular = new Circular();
 circular.append('E');
 circular.head; // => Node { value: 'E', next: [Circular], prev: [Circular] }
 circular.last; // => Node { value: 'E', next: [Circular], prev: [Circular] }
+if (circular.head) {
+    circular.head.next.next;
+    // => Node { value: 'E', next: [Circular], prev: [Circular] }
+}
 circular.get(0); // => E
 
 // Return the node corresponding to the index

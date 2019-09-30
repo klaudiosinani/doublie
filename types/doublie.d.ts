@@ -5,8 +5,8 @@ declare namespace node {
 
   export interface Instance<T = any> {
     value: T;
-    next: Instance<T> | null;
-    prev: Instance<T> | null;
+    next: this | null;
+    prev: this | null;
   }
 }
 
@@ -61,14 +61,9 @@ declare namespace linear {
 }
 
 declare namespace circular {
-  interface LastNode<T> extends node.Instance<T> {
-    next: node.Instance<T>;
-    prev: node.Instance<T>;
-  }
-
-  interface HeadNode<T> extends node.Instance<T> {
-    next: node.Instance<T>;
-    prev: node.Instance<T>;
+  interface Node<T> extends node.Instance<T> {
+    next: this;
+    prev: this;
   }
 
   export interface Constructor {
@@ -76,10 +71,12 @@ declare namespace circular {
   }
 
   interface Instance<T = any> extends list.Instance<T> {
-    readonly head: HeadNode<T> | null;
-    readonly last: LastNode<T> | null;
+    readonly head: Node<T> | null;
+    readonly last: Node<T> | null;
     map<U>(fn: (value: T) => U): Instance<U>;
     toLinear(): linear.Instance<T>;
+    // override node()
+    node(index: number): Node<T>;
   }
 }
 
