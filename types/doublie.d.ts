@@ -1,9 +1,9 @@
 declare namespace node {
   export interface Constructor {
-    new <T = any>(value?: T): Instance<T>;
+    new <T = unknown>(value?: T): Instance<T>;
   }
 
-  export interface Instance<T = any> {
+  export interface Instance<T = unknown> {
     value: T;
     next: Instance<T> | null;
     prev: Instance<T> | null;
@@ -49,10 +49,10 @@ declare namespace linear {
   }
 
   export interface Constructor {
-    new <T = any>(): Instance<T>;
+    new <T = unknown>(): Instance<T>;
   }
 
-  interface Instance<T = any> extends list.Instance<T> {
+  interface Instance<T = unknown> extends list.Instance<T> {
     readonly head: HeadNode<T> | null;
     readonly last: LastNode<T> | null;
     map<U>(fn: (value: T) => U): Instance<U>;
@@ -72,10 +72,10 @@ declare namespace circular {
   }
 
   export interface Constructor {
-    new <T = any>(): Instance<T>;
+    new <T = unknown>(): Instance<T>;
   }
 
-  interface Instance<T = any> extends list.Instance<T> {
+  interface Instance<T = unknown> extends list.Instance<T> {
     readonly head: HeadNode<T> | null;
     readonly last: LastNode<T> | null;
     map<U>(fn: (value: T) => U): Instance<U>;
@@ -84,9 +84,9 @@ declare namespace circular {
 }
 
 declare namespace doublie {
-  export interface Circular<T = any> extends circular.Instance<T> {}
-  export interface Linear<T = any> extends linear.Instance<T> {}
-  export interface Node<T = any> extends node.Instance<T> {}
+  export interface Circular<T = unknown> extends circular.Instance<T> {}
+  export interface Linear<T = unknown> extends linear.Instance<T> {}
+  export interface Node<T = unknown> extends node.Instance<T> {}
 }
 
 declare const doublie: {

@@ -1,6 +1,6 @@
 import {Circular} from '../..';
 
-const circular = new Circular();
+const circular = new Circular<string>();
 
 // Append a node holding the value `E`
 circular.append('E');
@@ -57,9 +57,9 @@ circular.reverse().map(x => `[${x}]`).join('->');
 // Clear the list
 circular.clear(); // => Circular { head: null, length: 0, last: null }
 
-// Reduce values to a final sum
-circular.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
-//=> 75
+// Concatenate letters using reduce
+circular.append('A', 'B', 'C', 'D', 'E').reduce((x, y) => x + y, '');
+//=> ABCDE
 
 circular.append('R', 'O', 'G');
 circular.includes('G'); //=> true

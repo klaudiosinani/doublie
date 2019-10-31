@@ -1,6 +1,6 @@
 import {Linear} from '../..';
 
-const linear = new Linear();
+const linear = new Linear<string>();
 
 // Append a node holding the value `E`
 linear.append('E');
@@ -51,9 +51,9 @@ linear.reverse().map(x => `[${x}]`).join('->');
 // Clear the list
 linear.clear(); // => Linear { head: null, length: 0, last: null }
 
-// Reduce values to a final sum
-linear.append(5, 10, 15, 20, 25).reduce((x, y) => x + y, 0);
-//=> 75
+// Concatenate letters using reduce
+linear.append('A', 'B', 'C', 'D', 'E').reduce((x, y) => x + y, '');
+//=> ABCDE
 
 linear.append('R', 'O', 'G');
 linear.includes('G'); //=> true
