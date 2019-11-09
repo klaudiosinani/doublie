@@ -1,5 +1,5 @@
 <h1 align="center">
-  Doublie
+  Doublie_Linked_List
 </h1>
 
 <h4 align="center">
