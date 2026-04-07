@@ -3,11 +3,11 @@
   "version": "1.1.0",
   "description": "Doubly circular & linear linked lists for ES6",
   "license": "MIT",
-  "repository": "klaussinani/doublie",
+  "repository": "klaudiosinani/doublie",
   "author": {
-    "name": "Klaus Sinani",
-    "email": "klaussinani@gmail.com",
-    "url": "https://klaussinani.github.io"
+    "name": "Klaudio Sinani",
+    "email": "klaudiosinani@protonmail.ch",
+    "url": "https://klaudiosinani.com"
   },
   "types": "types/doublie.d.ts",
   "files": [
